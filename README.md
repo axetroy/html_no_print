@@ -35,6 +35,6 @@ Javascript 内置了 print 方法，可以覆盖 print 方法，防止其他的 
 
 这个方案只能阻止 javascript 层面的打印 ，仍然可以通过其他途径触发打印
 
-[Demo](https://axetroy.github.io/html_no_print/overwrite_javascript_print.html)
+[Demo](https://axetroy.github.io/html_no_print/overrite_javascript_print.html)
 
 结合以上几个方法，基本上阻止大部分的打印
