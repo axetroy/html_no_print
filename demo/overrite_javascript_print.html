@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>阻止 Javascript 打印页面</title>
+  </head>
+  <body>
+    <h1>防止打印</h1>
+    <h2>works: Firefox/Chrome/IE</h2>
+
+    <button id="print">点击打印</button>
+
+    <script>
+      (function () {
+        var __PRINT__ = window.print;
+
+        function print() {
+          alert("打印被阻止");
+        }
+
+        if (Object.defineProperty) {
+          Object.defineProperty(window, "print", {
+            value: print,
+            configurable: false,
+            writable: false,
+          });
+        } else {
+          window.print = print;
+        }
+      })();
+
+      document.getElementById("print").addEventListener("click", function () {
+        window.print();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>阻止 CTRL+P 快捷键打印</title>
+  </head>
+  <body>
+    <h1>防止打印</h1>
+    <h2>works: Firefox/Chrome/IE</h2>
+    <h2>试试按一下 CTRL+P 进行打印</h2>
+
+    <script>
+      function onKeyDown(event) {
+        var isCtrlP = (event.ctrlKey || event.metaKey) && event.key == "p";
+        var isPrintScreen = event.key === "PrintScreen";
+        if (isCtrlP || isPrintScreen) {
+          event.cancelBubble = true;
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          alert("阻止打印");
+        }
+      }
+
+      document.body.addEventListener("keydown", onKeyDown);
+      window.addEventListener("keydown", onKeyDown);
+    </script>
+  </body>
+</html>

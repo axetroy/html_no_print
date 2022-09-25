@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通过模糊防止打印</title>
+  </head>
+  <body>
+    <h1>防止打印</h1>
+    <h2>works: Firefox/Chrome</h2>
+    <h2>not works: IE</h2>
+
+    <script>
+      var isIe = window.document.documentMode;
+
+      function blur() {
+        document.body.style.cssText =
+          "-webkit-filter: blur(5px);-moz-filter: blur(5px);-ms-filter: blur(5px);-o-filter: blur(5px);filter: blur(5px);";
+
+        if (isIe) {
+          document.body.style.display = "none";
+        }
+
+        console.log("blur");
+      }
+
+      function cleanBlur() {
+        document.body.style.cssText =
+          "-webkit-filter: blur(0px);-moz-filter: blur(0px);-ms-filter: blur(0px);-o-filter: blur(0px);filter: blur(0px);";
+
+        if (isIe) {
+          document.body.style.display = "block";
+        }
+
+        console.log("clean blur");
+      }
+
+      document.addEventListener("blur", blur);
+      window.addEventListener("blur", blur);
+      document.addEventListener("click", cleanBlur);
+      document.addEventListener("focus", cleanBlur);
+    </script>
+  </body>
+</html>
