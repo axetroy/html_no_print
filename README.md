@@ -9,7 +9,7 @@
 
 这个方案体验稍差
 
-[Demo](demo/blur_mask.html)
+[Demo](https://axetroy.github.io/html_no_print/blur_mask.html)
 
 2. css media 方法
 
@@ -19,7 +19,7 @@
 
 这个方案对于用户来说，无感知
 
-[Demo](demo/css_media.html)
+[Demo](https://axetroy.github.io/html_no_print/css_media.html)
 
 3. 阻止浏览器默认的打印快捷键
 
@@ -27,7 +27,7 @@
 
 这个方案只能阻止页面内的快捷键，仍然可以通过其他途径触发打印
 
-[Demo](demo/block_shotcut.html)
+[Demo](https://axetroy.github.io/html_no_print/block_shotcut.html)
 
 4. 覆盖 javascript 的 print 方法
 
@@ -35,6 +35,6 @@ Javascript 内置了 print 方法，可以覆盖 print 方法，防止其他的 
 
 这个方案只能阻止 javascript 层面的打印 ，仍然可以通过其他途径触发打印
 
-[Demo](demo/overwrite_javascript_print.html)
+[Demo](https://axetroy.github.io/html_no_print/overwrite_javascript_print.html)
 
 结合以上几个方法，基本上阻止大部分的打印
